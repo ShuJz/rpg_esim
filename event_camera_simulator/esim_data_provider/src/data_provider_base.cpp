@@ -30,4 +30,9 @@ void DataProviderBase::registerCallback(const Callback& callback)
   callback_ = callback;
 }
 
+void DataProviderBase::registerCallbackServer(const CallbackServer& callback)
+{
+  callback_server_ = callback;
+}
+
 } // namespace event_camera_simulator

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ze/common/transformation.hpp>
+#include <ze/common/timer_collection.hpp>
 #include <opencv2/core/core.hpp>
 #include <ze/cameras/camera_rig.hpp>
 #include <memory>

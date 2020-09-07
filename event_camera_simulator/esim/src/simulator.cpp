@@ -4,10 +4,7 @@
 
 namespace event_camera_simulator {
 
-DECLARE_TIMER(TimerEventSimulator, timers_event_simulator_,
-              simulate_events,
-              visualization
-              );
+DECLARE_TIMER(TimerEventSimulator, timers_event_simulator_, simulate_events, visualization);
 
 Simulator::~Simulator()
 {

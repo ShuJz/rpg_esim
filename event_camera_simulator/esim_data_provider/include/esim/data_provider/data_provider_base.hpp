@@ -19,6 +19,9 @@ namespace event_camera_simulator {
 using Callback =
   std::function<void (const SimulatorData& sim_data)>;
 
+using CallbackServer =
+  std::function<void (const SimulatorData& sim_data, EventsVector& events)>;
+
 enum class DataProviderType {
   RendererOnline,
   Folder,
@@ -54,6 +57,8 @@ public:
   //! Register callback function to call when new message is available.
   void registerCallback(const Callback& callback);
 
+  void registerCallbackServer(const CallbackServer& callback);
+
   //! Returns the number of cameras in the rig
   virtual size_t numCameras() const = 0;
 
@@ -63,6 +68,7 @@ public:
 protected:
   DataProviderType type_;
   Callback callback_;
+  CallbackServer callback_server_;
   volatile bool running_ = true;
 
   ze::CameraRig::Ptr camera_rig_;

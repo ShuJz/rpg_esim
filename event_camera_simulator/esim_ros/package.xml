@@ -13,6 +13,7 @@
 
   <depend>esim_common</depend>
   <depend>esim</depend>
+  <depend>esim_srvs</depend>
   <depend>esim_data_provider</depend>
   <depend>esim_visualization</depend>
   <depend>gflags_catkin</depend>

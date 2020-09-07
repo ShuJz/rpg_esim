@@ -4,6 +4,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <ze/common/time_conversions.hpp>
 
+#include "ros/ros.h"
 namespace event_camera_simulator {
 
 void EventSimulator::init(const Image &img, Time time)
@@ -30,8 +31,9 @@ Events EventSimulator::imageCallback(const Image& img, Time time)
 
   if(!is_initialized_)
   {
-    init(preprocessed_img, time);
-    return {};
+    this->init(preprocessed_img, time);
+    Events empty_events;
+    return empty_events;
   }
 
   // For each pixel, check if new events need to be generated since the last image sample
@@ -41,7 +43,6 @@ Events EventSimulator::imageCallback(const Image& img, Time time)
 
   CHECK_GT(delta_t_ns, 0u);
   CHECK_EQ(img.size(), size_);
-
   for (int y = 0; y < size_.height; ++y)
   {
     for (int x = 0; x < size_.width; ++x)

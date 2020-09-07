@@ -6,13 +6,15 @@ find_package(OpenCV REQUIRED)
 catkin_simple()
 
 set(HEADERS
-    include/esim/esim/simulator.hpp
+    # include/esim/esim/simulator.hpp
+    include/esim/esim/simulator_server.hpp
     include/esim/esim/event_simulator.hpp
     include/esim/esim/camera_simulator.hpp
 )
 
 set(SOURCES
-    src/simulator.cpp
+    # src/simulator.cpp
+    src/simulator_server.cpp
     src/event_simulator.cpp
     src/camera_simulator.cpp
 )

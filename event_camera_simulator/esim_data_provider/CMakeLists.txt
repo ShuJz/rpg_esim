@@ -12,6 +12,7 @@ set(HEADERS
     include/esim/data_provider/data_provider_online_render.hpp
     include/esim/data_provider/data_provider_online_simple.hpp
     include/esim/data_provider/data_provider_from_folder.hpp
+    include/esim/data_provider/data_provider_from_client.hpp
     include/esim/data_provider/data_provider_rosbag.hpp
     include/esim/data_provider/renderer_factory.hpp
 )
@@ -22,6 +23,7 @@ set(SOURCES
     src/data_provider_online_render.cpp
     src/data_provider_online_simple.cpp
     src/data_provider_from_folder.cpp
+    src/data_provider_from_client.cpp
     src/data_provider_rosbag.cpp
     src/renderer_factory.cpp
 )
